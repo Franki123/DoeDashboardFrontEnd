@@ -6,16 +6,16 @@ import GameMasterDashboard from './pages/GameMasterDashboard';
 
 const App: React.FC = () => (
   <div>
-    <nav style={{ display: 'flex', gap: '1rem' }}>
-      <Link to="/players">Players</Link>
-      <Link to="/viewer">Viewer</Link>
-      <Link to="/gamemaster">GameMaster</Link>
+    <nav className="nav">
+      <Link to="/players" className="nav-link">Players</Link>
+      <Link to="/viewer" className="nav-link">Viewer</Link>
+      <Link to="/gamemaster" className="nav-link">GameMaster</Link>
     </nav>
     <Routes>
       <Route path="/players" element={<PlayerDashboard />} />
       <Route path="/viewer" element={<ViewerDashboard />} />
       <Route path="/gamemaster" element={<GameMasterDashboard />} />
-      <Route path="*" element={<div>Select a view</div>} />
+      <Route path="*" element={<div className="select-view">Select a view above to get started</div>} />
     </Routes>
   </div>
 );
