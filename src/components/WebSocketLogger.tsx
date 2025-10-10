@@ -158,8 +158,8 @@ export const WebSocketLogger = () => {
   };
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'monospace' }}>
-      <h2>DOE Dashboard</h2>
+    <div style={{ padding: '20px', fontFamily: 'monospace', color: '#000' }}>
+      <h2 style={{ color: '#000' }}>DOE Dashboard</h2>
 
       {/* Show PlayerPanel if logged in, otherwise show join form */}
       {joinSuccess ? (
@@ -177,10 +177,10 @@ export const WebSocketLogger = () => {
         border: '1px solid #ddd',
         backgroundColor: '#f9f9f9'
       }}>
-        <h3>Join Game</h3>
+        <h3 style={{ color: '#000' }}>Join Game</h3>
 
         <div style={{ marginBottom: '10px' }}>
-          <label style={{ display: 'block', marginBottom: '5px' }}>
+          <label style={{ display: 'block', marginBottom: '5px', color: '#000' }}>
             Player Name:
           </label>
           <input
@@ -193,7 +193,7 @@ export const WebSocketLogger = () => {
         </div>
 
         <div style={{ marginBottom: '10px' }}>
-          <label style={{ display: 'block', marginBottom: '5px' }}>
+          <label style={{ display: 'block', marginBottom: '5px', color: '#000' }}>
             Role:
           </label>
           <select
@@ -210,7 +210,7 @@ export const WebSocketLogger = () => {
 
         {role === 'GM' && (
           <div style={{ marginBottom: '10px' }}>
-            <label style={{ display: 'block', marginBottom: '5px' }}>
+            <label style={{ display: 'block', marginBottom: '5px', color: '#000' }}>
               Superuser Token:
             </label>
             <input
@@ -302,7 +302,7 @@ export const WebSocketLogger = () => {
       )}
 
       {/* WebSocket Status */}
-      <div style={{ marginBottom: '10px' }}>
+      <div style={{ marginBottom: '10px', color: '#000' }}>
         Status:
         <span style={{
           color: isConnected ? 'green' : 'red',
@@ -323,7 +323,7 @@ export const WebSocketLogger = () => {
         fontFamily: 'Arial, sans-serif'
       }}>
         {messages.length === 0 ? (
-          <div style={{ color: '#999', fontSize: '14px' }}>No messages received yet...</div>
+          <div style={{ color: '#666', fontSize: '14px' }}>No messages received yet...</div>
         ) : (
           messages.slice(-5).map((msg, index) => (
             <div key={index} style={{

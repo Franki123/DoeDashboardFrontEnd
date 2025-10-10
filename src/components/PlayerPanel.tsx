@@ -79,15 +79,15 @@ export const PlayerPanel = ({
         marginBottom: '20px',
         borderRadius: '4px'
       }}>
-        <h3 style={{ margin: '0 0 5px 0' }}>Your Balance</h3>
-        <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#2e7d32' }}>
+        <h3 style={{ margin: '0 0 5px 0', color: '#1b5e20' }}>Your Balance</h3>
+        <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#1b5e20' }}>
           ${playerBalance.toFixed(2)}
         </div>
       </div>
 
       {/* Other Players List */}
       <div style={{ marginBottom: '20px' }}>
-        <h3>Other Players</h3>
+        <h3 style={{ color: '#000' }}>Other Players</h3>
         <select
           value={selectedPlayer}
           onChange={(e) => setSelectedPlayer(e.target.value)}
@@ -116,10 +116,10 @@ export const PlayerPanel = ({
         marginBottom: '20px',
         borderRadius: '4px'
       }}>
-        <h3 style={{ marginTop: 0 }}>Send Money</h3>
+        <h3 style={{ marginTop: 0, color: '#000' }}>Send Money</h3>
 
         <div style={{ marginBottom: '10px' }}>
-          <label style={{ display: 'block', marginBottom: '5px', fontSize: '14px' }}>
+          <label style={{ display: 'block', marginBottom: '5px', fontSize: '14px', fontWeight: '500', color: '#000' }}>
             Amount:
           </label>
           <input
@@ -133,7 +133,7 @@ export const PlayerPanel = ({
         </div>
 
         <div style={{ marginBottom: '10px' }}>
-          <label style={{ display: 'block', marginBottom: '5px', fontSize: '14px' }}>
+          <label style={{ display: 'block', marginBottom: '5px', fontSize: '14px', fontWeight: '500', color: '#000' }}>
             Memo (optional):
           </label>
           <input
@@ -173,7 +173,7 @@ export const PlayerPanel = ({
 
       {/* Transactions List */}
       <div>
-        <h3>Recent Transactions</h3>
+        <h3 style={{ color: '#000' }}>Recent Transactions</h3>
         <div style={{
           border: '1px solid #ccc',
           maxHeight: '200px',
@@ -181,7 +181,7 @@ export const PlayerPanel = ({
           backgroundColor: '#fafafa'
         }}>
           {transactions.length === 0 ? (
-            <div style={{ padding: '15px', color: '#999', fontSize: '14px' }}>
+            <div style={{ padding: '15px', color: '#666', fontSize: '14px' }}>
               No transactions yet
             </div>
           ) : (
@@ -194,15 +194,15 @@ export const PlayerPanel = ({
                   fontSize: '14px'
                 }}
               >
-                <div style={{ fontWeight: 'bold' }}>
+                <div style={{ fontWeight: 'bold', color: '#000' }}>
                   {txn.from} → {txn.to}: ${txn.amount.toFixed(2)}
                 </div>
                 {txn.memo && (
-                  <div style={{ color: '#666', fontSize: '12px' }}>
+                  <div style={{ color: '#555', fontSize: '12px' }}>
                     {txn.memo}
                   </div>
                 )}
-                <div style={{ color: '#999', fontSize: '12px' }}>
+                <div style={{ color: '#666', fontSize: '12px' }}>
                   {new Date(txn.timestamp).toLocaleString()}
                 </div>
               </div>
